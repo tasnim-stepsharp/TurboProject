@@ -1,6 +1,6 @@
-import { Flex } from "../../../components/ui";
-import { Button } from "../../../components/ui/button";
-import { Input } from "../../../components/ui/input";
+import { Flex } from "../../ui";
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import { FC, useState } from "react";
 export type TApiKeyInput = {

@@ -1,9 +1,9 @@
-import { FormLabel } from "../../../components/ui";
-import { Button } from "../../../components/ui/button";
-import { Flex } from "../../../components/ui/flex";
-import { Input } from "../../../components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs";
-import { useToast } from "../../../components/ui/use-toast";
+import { FormLabel } from "../../ui";
+import { Button } from "../../ui/button";
+import { Flex } from "../../ui/flex";
+import { Input } from "../../ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
+import { useToast } from "../../ui/use-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 

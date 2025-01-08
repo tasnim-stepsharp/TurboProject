@@ -1,37 +1,37 @@
-import { FormLabel } from "../../../components/ui";
-import { Button } from "../../../components/ui/button";
-import { Flex } from "../../../components/ui/flex";
+import { FormLabel } from "../../ui";
+import { Button } from "../../ui/button";
+import { Flex } from "../../ui/flex";
 import { useEffect, useState } from "react";
 import { ApiKeyInfo } from "./api-key-info";
 import ApiKeyInput from "./api-key-input";
 
-export const AnthropicSettings = () => {
+export const GroqSettings = () => {
   const [key, setKey] = useState<string>("");
-  const [anthropicKey, setAnthropicKey] = useState<string | null>(null);
+  const [groqKey, setGroqKey] = useState<string | null>(null);
   const [isCheckingApiKey, setIsCheckingApiKey] = useState<boolean>(false);
 
-  // Simulating the getApiKey functionality
+  // Simulate API key retrieval
   useEffect(() => {
-    const storedKey = localStorage.getItem("anthropicKey");
-    setAnthropicKey(storedKey);
+    const storedKey = localStorage.getItem("groqKey");
+    setGroqKey(storedKey);
     setKey(storedKey || "");
   }, []);
 
-  // Simulating the updateApiKey functionality
+  // Simulate API key update
   const updateApiKey = (key: string) => {
     if (key) {
-      localStorage.setItem("anthropicKey", key);
+      localStorage.setItem("groqKey", key);
     } else {
-      localStorage.removeItem("anthropicKey");
+      localStorage.removeItem("groqKey");
     }
-    setAnthropicKey(key || null);
+    setGroqKey(key || null);
   };
 
-  // Simulating checkApiKey functionality
+  // Simulate API key validation
   const checkApiKey = (key: string, onValidated: () => void, onError: () => void) => {
     setIsCheckingApiKey(true);
 
-    // Simulate API key validation (replace this with actual API logic)
+    // Fake validation logic
     setTimeout(() => {
       setIsCheckingApiKey(false);
       if (key.startsWith("sk-")) {
@@ -45,21 +45,21 @@ export const AnthropicSettings = () => {
   return (
     <Flex direction="col" gap="md">
       <FormLabel
-        label="Anthropic API Key"
-        link="https://console.anthropic.com/" // Direct link instead of configs dependency
+        label="Groq API Key"
+        link="https://console.groq.com/" // Replace configs dependency with direct link
         linkText="Get API key here"
       />
 
       <ApiKeyInput
         value={key}
         setValue={setKey}
-        isDisabled={!!anthropicKey}
+        isDisabled={!!groqKey}
         placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
-        isLocked={!!anthropicKey}
+        isLocked={!!groqKey}
       />
 
       <Flex gap="sm">
-        {!anthropicKey && (
+        {!groqKey && (
           <Button
             variant="default"
             onClick={() => {
@@ -74,7 +74,7 @@ export const AnthropicSettings = () => {
           </Button>
         )}
 
-        {anthropicKey && (
+        {groqKey && (
           <Button
             variant="secondary"
             onClick={() => {
