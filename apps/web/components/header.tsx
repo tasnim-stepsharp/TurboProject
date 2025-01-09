@@ -1,5 +1,3 @@
-// Header.tsx
-
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -20,7 +18,7 @@ const submenuVariants = {
 
 const NavItem: React.FC<NavItemProps> = ({ title, children }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false); // For mobile submenu
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false); 
   const containerRef = useRef<HTMLDivElement>(null);
 
   const isMobile = typeof window !== "undefined" ? window.innerWidth < 768 : false;

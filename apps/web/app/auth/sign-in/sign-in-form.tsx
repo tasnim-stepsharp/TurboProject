@@ -12,7 +12,6 @@ export default function SignInForm() {
     const [error, setError] = useState<string | null>(null)
     const [shouldRemember, setShouldRemember] = useState(false);
 
-
     async function handleSubmit(e: FormEvent) {
         e.preventDefault()
         setLoading(true)
@@ -36,8 +35,6 @@ export default function SignInForm() {
     return (
         <div className="w-full max-w-md rounded-md ">
             <div className="mb-6 text-center">
-
-                {/* Logo/Icon */}
                 <div className="flex justify-center mb-2">
                     <Image
                         src="/images/logo/logomark.png"
@@ -47,11 +44,9 @@ export default function SignInForm() {
                         priority
                     />
                 </div>
-
                 <h1 className="text-3xl font-semibold text-gray-abc-600 dark:text-Offwhite-abc-100">Log in to your account</h1>
                 <p className=" text-gray-abc-100 dark:text-gray-abc-500 pt-3">Welcome back! Please enter your details.</p>
             </div>
-            {/* Switch between Sign up & Log in (Optional) */}
             <div className="mb-4 flex items-center font-semibold justify-center rounded-lg border border-gray-abc-400 dark:border-gray-abc-50 bg-Offwhite-abc-200 dark:bg-gray-abc-700">
                 <Link
                     href="/auth/sign-up"
@@ -125,12 +120,21 @@ export default function SignInForm() {
                 )}
             </form>
 
-            <button
-                type="button"
-                onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-                className="w-full rounded-md border border-gray-abc-400 dark:border-gray-abc-50 py-2 text-sm text-gray-abc-300 dark:text-Offwhite-abc-300 hover:bg-gray-50 dark:hover:bg-gray-900 font-semibold">
-                Sign in with Google
-            </button>
+            <div className='flex items-center'>
+                <button
+                    type="button"
+                    onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+                    className="flex items-center justify-center w-full rounded-md border border-gray-abc-400 dark:border-gray-abc-50 text-sm text-gray-abc-300 dark:text-Offwhite-abc-300 hover:bg-gray-50 dark:hover:bg-gray-900 font-semibold">
+                     <Image
+                    src="/images/google.png"
+                    alt="google"
+                    width={48}
+                    height={48}
+                    priority
+                />
+                    Sign in with Google
+                </button>
+            </div>
 
             <div className="mt-6 text-center text-sm text-gray-abc-100 dark:text-gray-abc-500">
                 Don’t have an account?{' '}

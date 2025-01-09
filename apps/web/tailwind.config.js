@@ -12,7 +12,6 @@ export default {
   theme: {
     extend: {
       colors:{
-  
         primary :"#7F56D9",
         gray: {
           "abc-50": "#373A41",

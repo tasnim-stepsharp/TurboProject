@@ -1,8 +1,10 @@
-// import { configs } from "@/config/index";
+// turbo/apps/app/app/side-bar.tsx
 import { useAuth } from "@/lib/context";
 import { useRootContext } from "@/libs/context/root";
 import { Button, Flex, Tooltip, Type } from "../ui";
 import Avvvatars from "avvvatars-react";
+import Link from "next/link";
+
 import {
   LogInIcon,
   LogOut,
@@ -21,22 +23,28 @@ export const Sidebar = () => {
   const { setOpenApiKeyModal } = useRootContext();
   const { theme, setTheme } = useTheme();
 
+  const webAppUrl = process.env.NEXT_PUBLIC_WEB_URL;
+
   return (
     <div className="relative flex h-[100dvh] w-[260px] flex-shrink-0 flex-row border-l border-zinc-500/10">
       <Flex direction="col" gap="xl" className="no-scrollbar w-full pl-3 pr-1">
         {/* Sidebar Content */}
         <Flex className="w-full bg-zinc-50 py-3 dark:bg-zinc-900" direction="col" gap="sm">
-          {/* Sign In / Sign Out */}
           {!user ? (
-            <Button
-              size="sm"
-              variant="secondary"
-              className="w-full gap-2"
-              onClick={() => openSignIn()}
+            <Link
+              href={`${webAppUrl}/auth/sign-in`}
+              target="_blank"
+              className="w-full"
             >
-              <LogInIcon size={16} strokeWidth={2} />
-              Sign In
-            </Button>
+              <Button
+                size="sm"
+                variant="secondary"
+                className="w-full gap-2"
+              >
+                <LogInIcon size={16} strokeWidth={2} />
+                Sign In
+              </Button>
+            </Link>
           ) : (
             <Flex
               gap="sm"
