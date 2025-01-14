@@ -2,17 +2,16 @@ import { RootLayout } from "./components/layout/index";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import { cn } from "../lib/utils/clsx";
 
-// RootProvider and AuthProvider remain if you still need them
 import { RootProvider } from "@/libs/context/root";
 import { AuthProvider } from "@/libs/context/auth";
 
 const GeistSans = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Turbo Project",
+  title: "Turbo App",
   description: ".",
 };
 
@@ -21,6 +20,8 @@ export default function ParentLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("Generated classes:", cn(GeistSans.className, "antialiased", "light")); // Debugging class names
+
   return (
     <html
       lang="en"
@@ -44,9 +45,7 @@ export default function ParentLayout({
             disableTransitionOnChange
           >
             <AuthProvider>
-              {/* <SessionsProvider> */}
-                <RootLayout>{children}</RootLayout>
-              {/* </SessionsProvider> */}
+              <RootLayout>{children}</RootLayout>
             </AuthProvider>
           </ThemeProvider>
         </RootProvider>

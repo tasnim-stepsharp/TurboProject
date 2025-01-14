@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertCircle, Check } from "lucide-react";
-import { Button } from "./button";
+import { Button } from "../../../apps/app/app/components/ui/button.tsx";
 import {
   Toast,
   ToastClose,
@@ -9,8 +9,8 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "./toast";
-import { useToast } from "./use-toast";
+} from "../../../apps/app/app/components/ui/toast.tsx";
+import { useToast } from "../../../apps/app/app/components/ui/use-toast.ts";
 
 export function Toaster() {
   const { toasts, dismiss } = useToast();

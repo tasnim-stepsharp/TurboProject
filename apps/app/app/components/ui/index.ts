@@ -26,7 +26,7 @@ export * from "./switch";
 export * from "./text";
 export * from "./textarea";
 export * from "./toast";
-export * from "./toaster";
+export * from "../../../../../packages/ui/src/toaster";
 export * from "./tooltip";
 export * from "./use-confirm-popover";
 export * from "./use-toast";

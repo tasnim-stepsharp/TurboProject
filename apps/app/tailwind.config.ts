@@ -1,7 +1,9 @@
 import type { Config } from "tailwindcss";
+const sharedConfig = require('../../apps/web/tailwind.config');
 
-const config = {
+export default {
   darkMode: "class",
+  presets: [sharedConfig],
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -44,10 +46,7 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
+  
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -119,4 +118,3 @@ const config = {
   plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
-export default config;

@@ -1,11 +1,11 @@
 "use client";
 import { useRootContext } from "../../../lib/context/root";
 import { Flex } from "../ui";
-import { Toaster } from "../ui/toaster";
+import { Toaster } from '@repo/ui/toaster'
+
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import { Drawer } from "vaul";
-// import { CommandSearch } from "../command-search";
 import { Sidebar } from "./side-bar";
 
 export type TRootLayout = {
