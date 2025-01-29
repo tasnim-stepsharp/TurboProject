@@ -5,7 +5,6 @@ import { NextAuthProvider } from "./NextAuthProvider";
 import Header from "@/components/header";
 import { ThemeProvider } from "next-themes";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,7 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-
       <body className="dark:bg-gray-abc-700">
         <ThemeProvider
           attribute="class"
@@ -35,14 +33,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextAuthProvider>
-            <Header />
-            <div>{children}</div>
-          </NextAuthProvider>
+          {children && (
+            <NextAuthProvider>
+              <Header />
+              <div>{children}</div>
+            </NextAuthProvider>
+          )}
         </ThemeProvider>
       </body>
     </html>
-
-
   );
 }

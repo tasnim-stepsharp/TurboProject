@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+  - "apps/web/.react-email"
+  - "apps/myapp/.react-email"
+  - "apps/docs/.react-email"
+  - "packages/*"
+  - "packages/embeds/*"

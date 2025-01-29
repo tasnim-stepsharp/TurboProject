@@ -1,7 +1,7 @@
 "use client";
 
 import React, { InputHTMLAttributes } from "react";
-import CheckSvg from "./icons/CheckSvg.tsx";
+import CheckSvg from "../src/icons/CheckSvg.tsx";
 import cn from "../lib/cn.ts";
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
